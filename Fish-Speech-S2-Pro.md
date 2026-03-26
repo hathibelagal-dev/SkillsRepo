@@ -76,13 +76,56 @@ Examples:
 | ----------------------- | ---------------- |
 | `[pause]`               | Natural pause    |
 | `[short pause]`         | Brief pause      |
+| `[long pause]`          | Extended pause   |
 | `[interrupting]`        | Cuts into flow   |
 | `[inhale]` / `[exhale]` | Breathing sounds |
 | `[panting]`             | Heavy breathing  |
 
 ---
 
-### 5. Conversational Realism
+### 5. Pause & Flow Guidance (New)
+
+To avoid monotone or droning TTS output, explicitly guide **timing and flow**:
+
+1. **Do not rely on punctuation alone.** Periods, commas, and paragraph breaks are not reliably interpreted as pauses.
+
+   * Always add `[pause]`, `[short pause]`, or `[long pause]` where a natural breath or dramatic pause is needed.
+
+2. **Layer breathing and expressions.**
+
+   * Use `[inhale]` before longer sentences or emotional delivery.
+   * Use `[exhale]` or `[sigh]` to signal relief or tension release.
+   * Combine micro-expressions like `[chuckle]`, `[soft laugh]`, `[tsk]` to create realistic pacing.
+
+3. **Combine tag types for rhythm.**
+
+   * Example:
+
+     ```
+     I can’t believe it. [short pause][whisper][soft laugh] This is amazing.
+     ```
+
+4. **Guiding models (like Qwen)**
+
+   * Include instructions in your system prompt:
+
+     ```
+     Treat all punctuation as a cue for a pause:
+     - Period = [short pause]
+     - Comma = micro-pause
+     - Paragraph = [long pause]
+     Add breathing and subtle expressions to make speech natural.
+     ```
+
+5. **Best Practice**
+
+   * Vary pause lengths to match emotion and context.
+   * Avoid over-tagging; let the story flow naturally.
+   * Test and refine outputs to maintain performance-level delivery.
+
+---
+
+### 6. Conversational Realism
 
 | Tag                         | Effect                       |
 | --------------------------- | ---------------------------- |
@@ -94,7 +137,7 @@ Examples:
 
 ---
 
-### 6. Special Effects
+### 7. Special Effects
 
 | Tag                    | Effect              |
 | ---------------------- | ------------------- |
@@ -105,74 +148,25 @@ Examples:
 
 ---
 
-## Usage Guidelines
+## Example Scripts (with pauses)
 
-### 1. Place Tags Inline
-
-Tags can be inserted anywhere:
+**Dramatic Scene**
 
 ```
-I told you this would happen. [pause] But you didn’t listen.
+[low voice] It’s over. [pause] You had your chance. [angry][short pause] Now face the consequences.
 ```
 
-### 2. Combine Tags
-
-Multiple tags can stack:
+**Happy Moment**
 
 ```
-[whisper][sad] I really thought things would be different.
+[bright tone] The sun shone through the window. [short pause][delight] You smiled. [inhale] Everything felt lighter. [pause][soft laugh]
 ```
 
-### 3. Use Natural Language
-
-You are not restricted to predefined tags:
+**Comedic Delivery**
 
 ```
-[speak like a dramatic movie villain]
-[sound slightly nervous but excited]
+I walked in… [pause][laughing] and immediately regretted everything. [short pause][chuckle]
 ```
-
-### 4. Avoid Overuse
-
-Too many tags can make output unnatural. Use them intentionally.
-
----
-
-## Example Scripts
-
-### Dramatic Scene
-
-```
-[low voice] It’s over. [pause] You had your chance. [angry] Now face the consequences.
-```
-
-### Casual Conversation
-
-```
-Hey! [excited] It’s been a while. [chuckle] How have you been?
-```
-
-### Storytelling
-
-```
-[soft voice] Once upon a time... [pause] there was a forgotten kingdom. [mysterious tone]
-```
-
-### Comedic Delivery
-
-```
-So I walked into the room... [pause] [laughing] and immediately regretted everything.
-```
-
----
-
-## Best Practices
-
-* Use **emotion tags sparingly but meaningfully**
-* Combine **timing + tone** for realism
-* Prefer **natural descriptions** when presets feel limiting
-* Test variations to refine delivery
-* Match tags to context (dialogue, narration, etc.)
 
 ---
 
@@ -183,5 +177,6 @@ Fish Audio S2 Pro enables:
 * Fine-grained emotional control
 * Dynamic, human-like speech
 * Flexible, creative expression via inline tags
+* **Pause and flow management for natural performance**
 
-It turns TTS from plain narration into something much closer to an actual performance—where delivery matters just as much as the words themselves.
+By following this guide, scripts will breathe, convey emotion, and sound more like a live performance rather than a monotone narration.
