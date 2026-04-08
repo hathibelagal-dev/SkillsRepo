@@ -32,7 +32,8 @@ Avoid these red flags that make generation feel mechanical:
 Before finalizing a prompt, verify:
 - Do the instruments in the Caption match the tags in the Lyrics?
 - Does the emotion in the Caption match the performance hints in the Lyrics?
-- Is the syllable count consistent across similar sections (e.g., Verse 1 vs Verse 2)?
+- Is the syllable count consistent across similar sections (e.g., Verse 1 vs Verse 2)? (Aim for ±1-2 syllable deviation).
+
 </instructions>
 
 <examples>
